@@ -1,0 +1,16 @@
+{
+    "type": ["null", "object"],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": ["null", "integer"]
+        },
+        "value": {
+      	    "type": ["null", "string"]
+      	},
+        "submit_timestamp": {
+            "type": ["null", "string"],
+            "format": "date-time"
+      	}
+    }
+}
