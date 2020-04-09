@@ -7,8 +7,9 @@ from singer.catalog import Catalog, CatalogEntry
 from singer.schema import Schema
 
 from tap_15five.request_data import tap_data
+from tap_15five.request_data import sample_data
 
-REQUIRED_CONFIG_KEYS = ["start_date", "username", "password"]
+REQUIRED_CONFIG_KEYS = ["start_date", "access_token", "user_agent"]
 LOGGER = singer.get_logger()
 
 
@@ -74,9 +75,10 @@ def sync(config, state, catalog):
             key_properties=stream.key_properties
         )
 
+        columns = list(stream.schema.to_dict().get('properties').keys())
 
         max_bookmark = None
-        for row in tap_data():
+        for row in tap_data(config, stream.tap_stream_id, columns):
             # TODO: place type conversions or transformations here
 
             # write one or more rows to the stream:
@@ -90,13 +92,14 @@ def sync(config, state, catalog):
                     max_bookmark = max(max_bookmark, row[bookmark_column])
         if bookmark_column and not is_sorted:
             singer.write_state({stream.tap_stream_id: max_bookmark})
+
     return
 
 
 @utils.handle_top_exception(LOGGER)
 def main():
     # Parse command line arguments
-    args = utils.parse_args(REQUIRED_CONFIG_KEYS)
+    args = singer.utils.parse_args(REQUIRED_CONFIG_KEYS)
 
     # If discover flag was passed, run discovery mode and dump output to stdout
     if args.discover:
