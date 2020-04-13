@@ -1,0 +1,31 @@
+{
+    "type": ["null", "object"],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": ["integer"]
+        },
+        "name": {
+      	    "type": ["null", "string"]
+      	},
+        "members": {
+            "type": ["null", "array"],
+            "items": {
+              "type": ["null", "string"]
+            }
+        },
+        "is_peer_drilldown": {
+            "type": ["null", "boolean"]
+        },
+        "is_peer_view": {
+            "type": ["null", "boolean"]
+        },
+        "skip_company_wide_questions": {
+            "type": ["null", "boolean"]
+        },
+        "create_ts": {
+            "type": ["null", "string"],
+            "format": "date-time"
+        }
+    }
+}

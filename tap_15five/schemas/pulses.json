@@ -3,14 +3,20 @@
     "additionalProperties": false,
     "properties": {
         "id": {
-            "type": ["null", "integer"]
+            "type": ["integer"]
         },
         "value": {
       	    "type": ["null", "string"]
       	},
-        "submit_timestamp": {
+        "create_ts": {
             "type": ["null", "string"],
             "format": "date-time"
+      	},
+        "user": {
+            "type": ["null", "string"]
+      	},
+        "report": {
+            "type": ["null", "string"]
       	}
     }
 }

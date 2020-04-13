@@ -1,0 +1,36 @@
+{
+    "type": ["null", "object"],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": ["integer"]
+        },
+        "first_name": {
+      	    "type": ["null", "string"]
+      	},
+        "last_name": {
+            "type": ["null", "string"]
+      	},
+        "email": {
+            "type": ["null", "string"]
+      	},
+        "employee_id": {
+            "type": ["null", "string"]
+      	},
+        "is_active": {
+            "type": ["null", "boolean"]
+        },
+        "is_reviewer": {
+            "type": ["null", "boolean"]
+        },
+        "employee_id": {
+            "type": ["null", "string"]
+        },
+        "company_groups_ids": {
+            "type": ["null", "array"],
+            "items": {
+              "type": ["null", "integer"]
+            }
+        }
+    }
+}

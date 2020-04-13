@@ -1,0 +1,41 @@
+{
+    "type": ["null", "object"],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": ["integer"]
+        },
+        "user": {
+      	    "type": ["null", "string"]
+      	},
+        "due_date": {
+            "type": ["null", "string"],
+            "format": "date"
+      	},
+        "reporting_period": {
+            "type": ["null", "string"]
+      	},
+        "reporting_period_start": {
+            "type": ["null", "string"],
+            "format": "date-time"
+        },
+        "reporting_period_end": {
+            "type": ["null", "string"],
+            "format": "date-time"
+        },
+        "submit_ts": {
+            "type": ["null", "string"],
+            "format": "date-time"
+        },
+        "reviewed_ts": {
+            "type": ["null", "string"],
+            "format": "date-time"
+        },
+        "reviewed_by": {
+            "type": ["null", "string"]
+      	},
+        "was_submitted_late": {
+            "type": ["null", "boolean"]
+        }
+    }
+}
