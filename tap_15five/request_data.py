@@ -48,10 +48,7 @@ def tap_data(config, input_stream_id, columns):
         else:
             list_endpoint = r_list['next']
 
-    LOGGER.info('Synced: {}, total_records: {}'.format(
-                    input_stream_id,
-                    total_records))
-    LOGGER.info('FINISHED Syncing: {}'.format(input_stream_id))
+
 
 
 def sample_data(input_stream_id, columns):
