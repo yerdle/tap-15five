@@ -1,6 +1,15 @@
 {
   "bookmarks": {
-    "pulse": {
+    "pulses": {
+      "last_record": "2018-01-01T00:00:00Z"
+    }
+    "reports": {
+      "last_record": "2018-01-01T00:00:00Z"
+    }
+    "users": {
+      "last_record": "2018-01-01T00:00:00Z"
+    }
+    "groups": {
       "last_record": "2018-01-01T00:00:00Z"
     }
   }
