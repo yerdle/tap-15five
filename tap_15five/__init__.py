@@ -68,6 +68,7 @@ def sync(config, state, catalog):
 
         bookmark_column = stream.replication_key
         is_sorted = True  # TODO: indicate whether data is sorted ascending on bookmark value
+        activate_version_ind = True #full table replication of all streams
 
         singer.write_schema(
             stream_name=stream.tap_stream_id,
@@ -92,6 +93,26 @@ def sync(config, state, catalog):
                     max_bookmark = max(max_bookmark, row[bookmark_column])
         if bookmark_column and not is_sorted:
             singer.write_state({stream.tap_stream_id: max_bookmark})
+
+        if activate_version_ind:
+            activate_version = max_bookmark
+            activate_version_message = singer.ActivateVersionMessage(
+                stream=stream_name,
+                version=activate_version)
+        else:
+            activate_version = None
+
+        if total_records > 0
+            # End of Stream: Send Activate Version (if needed)
+            if activate_version_ind:
+                singer.write_message(activate_version_message)
+        else:
+            LOGGER.warning('NO NEW DATA FOR STREAM: {}'.format(stream_name))
+
+        LOGGER.info('Synced: {}, total_records: {}'.format(
+                        input_stream_id,
+                        total_records))
+        LOGGER.info('FINISHED Syncing: {}'.format(input_stream_id))
 
     return
 
