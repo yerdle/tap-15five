@@ -1,0 +1,10 @@
+---
+#### Cron jobs. Create a sub-element of 'cron_settings' per cron job
+####  Month with day-of-month is available as well if needed (contact DevOps)
+cron_settings:
+  tap-15five:
+    name:      "Tap 15Five"
+    minute:    "30"
+    hour:      "23"
+    weekday:   "*"
+    job_cmd:   "~/.virtualenvs/tap-15five/bin/tap-15five"
