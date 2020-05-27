@@ -1,0 +1,7 @@
+{
+"client_id": 145670,
+"token": "{{stitch_singer_api_key_15five_load}}",
+"small_batch_url": "https://api.stitchdata.com/v2/import/batch",
+"big_batch_url": "https://api.stitchdata.com/v2/import/batch",
+"batch_size_preferences": {}
+}
