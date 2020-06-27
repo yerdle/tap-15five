@@ -1,5 +1,5 @@
 {
   "start_date" : "2018-01-01T00:00:00Z",
-  "access_token" : "{{_15five_api_token_for_data_sync}}",
+  "access_token" : "{{15five_api_token_for_data_sync}}",
   "user_agent" : "Trove - analytics@trove.co"
 }
