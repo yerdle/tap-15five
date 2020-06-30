@@ -7,10 +7,10 @@
 # Start with a simple list. If different settings for different templates 
 # are needed, we can change it to a dictionary
 
-#dw_etl_templates:
-#    - tap_15five_config.json
-#    - target_stitch_config.json
+dw_etl_templates:
+    - tap_15five_config.json
+    - target_stitch_config.json
 
 #### Cron jobs. Create a sub-element of 'cron_settings' per cron job
 ####  Month with day-of-month is available as well if needed (contact DevOps)
-cron_settings:
+#cron_settings:
