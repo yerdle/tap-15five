@@ -13,4 +13,4 @@
 
 #### Cron jobs. Create a sub-element of 'cron_settings' per cron job
 ####  Month with day-of-month is available as well if needed (contact DevOps)
-#cron_settings:
+cron_settings:
