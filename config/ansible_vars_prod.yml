@@ -13,7 +13,7 @@
 ####  Month with day-of-month is available as well if needed (contact DevOps)
 
 cron_settings: {}
-# The above is an empty list. To add an entry, delete the '[]':
+# The above is an empty dictionary. To add an entry, delete the '{}'. Example:
 #
 #cron_settings:
 #  tap-15five:
