@@ -12,13 +12,13 @@
 #### Create a sub-element of 'cron_settings' per cron job
 ####  Month with day-of-month is available as well if needed (contact DevOps)
 
-cron_settings: {}
-# The above is an empty dictionary. To add an entry, delete the '{}'. Example:
-#
-#cron_settings:
-#  tap-15five:
-#    name:      "Tap 15Five"
-#    minute:    "30"
-#    hour:      "23"
-#    weekday:   "*"
-#    job_cmd:   "~/.virtualenvs/tap-15five/bin/tap-15five"
+cron_settings:
+  tap-15five:
+    name:      "Tap 15Five"
+    minute:    "30"
+    hour:      "23"
+    weekday:   "*"
+    job_cmd:   "~/.virtualenv/tap-15five/bin/tap-15five --config /etc/opt/tap-15five/tap_15five_config.json --catalog /opt/tap-15five/catalog.json | ~/.virtualenv/target-stitch/bin/target-stitch --config /etc/opt/tap-15five/target_stitch_config.json >> /opt/tap-15five/tap_state.json"
+    job_state: present
+### Note: job state 'present makes this the live server, executing at 23:30
+### Change to 'absent' to disable the job without losing the schedule.
