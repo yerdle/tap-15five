@@ -14,8 +14,9 @@
 cron_settings:
   tap-15five:
     name:      "Tap 15Five"
-    minute:    "30"
-    hour:      "23"
+    minute:    "0"
+    hour:      "12"
     weekday:   "*"
     job_cmd:   "~/.virtualenv/tap-15five/bin/tap-15five --config /etc/opt/tap-15five/tap_15five_config.json --catalog /opt/tap-15five/catalog.json | ~/.virtualenv/target-stitch/bin/target-stitch --config /etc/opt/tap-15five/target_stitch_config.json >> /opt/tap-15five/tap_state.json"
-    job_state: present
+    job_state: absent
+### Note: job state 'absent' disables this job.   Change to 'present' to run at noon.
