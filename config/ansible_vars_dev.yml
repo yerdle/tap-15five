@@ -1,0 +1,21 @@
+---
+####### Variables for the 'dev' environment
+
+#################
+#   !!! IMPORTANT: Variables in this file cannot also exist in ansible_vars_all.yml !!!
+#
+#   If there is duplication, you likely won't get what you want.
+#
+#################
+
+#### Cron jobs usually vary by environment 
+#### Create a sub-element of 'cron_settings' per cron job
+####  Month with day-of-month is available as well if needed (contact DevOps)
+cron_settings:
+  tap-15five:
+    name:      "Tap 15Five"
+    minute:    "30"
+    hour:      "23"
+    weekday:   "*"
+    job_cmd:   "~/.virtualenv/tap-15five/bin/tap-15five --config /etc/opt/tap-15five/tap_15five_config.json --catalog /opt/tap-15five/catalog.json | ~/.virtualenv/target-stitch/bin/target-stitch --config /etc/opt/tap-15five/target_stitch_config.json >> /opt/tap-15five/tap_state.json"
+    job_state: present

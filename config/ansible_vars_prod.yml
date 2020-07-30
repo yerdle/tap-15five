@@ -1,0 +1,24 @@
+---
+####### Variables for the 'prod' environment
+
+#################
+#   !!! IMPORTANT: Variables in this file cannot also exist in ansible_vars_all.yml !!!
+#
+#   If there is duplication, you likely won't get what you want.
+#
+#################
+
+#### Cron jobs usually vary by environment 
+#### Create a sub-element of 'cron_settings' per cron job
+####  Month with day-of-month is available as well if needed (contact DevOps)
+
+cron_settings: {}
+# The above is an empty dictionary. To add an entry, delete the '{}'. Example:
+#
+#cron_settings:
+#  tap-15five:
+#    name:      "Tap 15Five"
+#    minute:    "30"
+#    hour:      "23"
+#    weekday:   "*"
+#    job_cmd:   "~/.virtualenvs/tap-15five/bin/tap-15five"
