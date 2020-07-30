@@ -102,7 +102,7 @@ def sync(config, state, catalog):
         else:
             activate_version = None
 
-        if total_records > 0
+        if total_records > 0 :
             # End of Stream: Send Activate Version (if needed)
             if activate_version_ind:
                 singer.write_message(activate_version_message)

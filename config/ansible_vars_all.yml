@@ -1,0 +1,20 @@
+---
+####### Variables common to all environments
+
+#################
+#   !!! IMPORTANT: Variables in this file cannot also exist in ansible_vars_<env>.yml !!!
+#
+#   If there is duplication, you likely won't get what you want.
+#
+#################
+
+#### Templates are a resource that spans the environments.
+#### Ansible replaces the jinja variables and places the result in /etc/opt/<repo>/
+####
+# Start with a simple list. If different settings for different templates 
+# are needed, we can change it to a dictionary
+
+dw_etl_templates:
+    - tap_15five_config.json
+    - target_stitch_config.json
+
